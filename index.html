@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillLink - Marketplace de Serviços</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+    }
+
+    header {
+      background: #0b3d91;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0b3d91;
+    }
+
+    button {
+      background: #0b3d91;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      padding: 8px;
+      width: 100%;
+      margin: 5px 0 15px 0;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SkillLink</h1>
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('resultados')">Serviços</a>
+    <a href="#" onclick="showSection('perfil')">Perfil</a>
+    <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <h2>Encontre profissionais confiáveis</h2>
+  <p>Busque, compare e contrate em minutos.</p>
+
+  <input type="text" placeholder="Serviço">
+  <input type="text" placeholder="Cidade">
+  <button onclick="showSection('resultados')">Buscar</button>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <h2>Profissionais Encontrados</h2>
+
+  <div class="card">
+    <h3>João Silva</h3>
+    <p>Personal Trainer - Lisboa</p>
+    <p>⭐⭐⭐⭐☆ (4.5)</p>
+    <p>€30/hora</p>
+    <button onclick="showSection('perfil')">Ver Perfil</button>
+  </div>
+
+  <div class="card">
+    <h3>Ana Costa</h3>
+    <p>Personal Trainer - Lisboa</p>
+    <p>⭐⭐⭐⭐⭐ (5.0)</p>
+    <p>€40/hora</p>
+    <button onclick="showSection('perfil')">Ver Perfil</button>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section id="perfil">
+  <h2>Perfil do Profissional</h2>
+
+  <div class="card">
+    <h3>João Silva</h3>
+    <p>Especialista em emagrecimento e hipertrofia.</p>
+    <p>Preço: €30/hora</p>
+
+    <h4>Reservar</h4>
+    <input type="date">
+    <button>Contratar Agora</button>
+  </div>
+
+  <div class="card">
+    <h4>Avaliações</h4>
+    <p><strong>Maria:</strong> Excelente profissional!</p>
+    <p><strong>Carlos:</strong> Muito dedicado.</p>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <h2>Dashboard do Profissional</h2>
+
+  <div class="card">
+    <h3>Gerenciar Perfil</h3>
+    <input type="text" value="João Silva">
+    <input type="text" value="Personal Trainer">
+    <input type="text" value="Lisboa">
+    <input type="number" value="30">
+    <textarea>Especialista em treino funcional.</textarea>
+    <button>Salvar Alterações</button>
+  </div>
+
+  <div class="card">
+    <h3>Agendamentos</h3>
+    <p>Maria - 25/02/2026 - Confirmado</p>
+    <p>Carlos - 27/02/2026 - Pendente</p>
+  </div>
+</section>
+
+<script>
+  function showSection(sectionId) {
+    document.querySelectorAll("section").forEach(sec => {
+      sec.classList.remove("active");
+    });
+    document.getElementById(sectionId).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
